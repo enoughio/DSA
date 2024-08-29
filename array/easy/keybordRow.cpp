@@ -1,4 +1,4 @@
-#include <bits/std++.h>;
+#include <bits/std++.h>
 using namespace std;
 
 class Solution {
