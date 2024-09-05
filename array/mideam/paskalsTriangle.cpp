@@ -16,12 +16,12 @@ public:
             }
             ans.push_back(current);
         }
-
         return ans;
-
     }
 };
 
+
+// module Solution
 
         // for(int j = 0; j < numRows; j++)
         // {
