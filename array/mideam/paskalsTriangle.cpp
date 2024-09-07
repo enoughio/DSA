@@ -22,7 +22,6 @@ public:
 
 
 // module Solution
-
         // for(int j = 0; j < numRows; j++)
         // {
         //    vector<int> nums(j+1, 1);
@@ -34,3 +33,4 @@ public:
         //     ans.push_back(nums);
         // }
         //     return ans;
+        //
