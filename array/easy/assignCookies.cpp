@@ -3,7 +3,7 @@ using namespace std;
 
 
 class Solution {
-public:
+public:w
     int findContentChildren(vector<int>& g, vector<int>& s) {
         
         sort(g.begin(), g.end());
