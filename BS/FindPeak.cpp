@@ -35,3 +35,15 @@ public:
 
     }
 };
+ 
+
+// make
+ void main() 
+ {
+    vector<int> x = {2,3,4,5,6,7};
+    Solution s;
+
+    cout<< s.findPeakElement(x);
+
+    // return 1;
+ }
