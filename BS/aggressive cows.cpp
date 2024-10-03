@@ -1,3 +1,44 @@
+/*
+
+bool isValid(vector<int>& stalls, int k, int dis, int n){
+    int last = stalls[0];
+    int cow = 1;
+
+    for(int i = 1; i < n; i++){
+        if((stalls[i] - last) >= dis){
+            last = stalls[i];
+            cow++;
+        }
+    }
+
+    if(cow >= k) return true;
+    return false;
+}
+
+int aggressiveCows(vector<int> &stalls, int k)
+{
+    //    Write your code here.
+    sort(stalls.begin(), stalls.end());
+    int n = stalls.size();
+    
+    for(int mindis = 1; mindis <= stalls[n-1]; mindis++){  //search space 1 to maxidstance possible
+
+        if(isValid(stalls, k, mindis, n) == true){
+            continue;
+        } else {
+            return mindis-1;
+        }
+
+    }
+    return -1;
+}
+
+*/
+
+
+
+
+
 
 
 /*
