@@ -1,3 +1,13 @@
+
+
+
+
+
+
+/*
+  something
+
+
 class Solution {
 public:
     bool binaryRow(vector<int>& arr, int start, int end, int target) {
@@ -78,5 +88,9 @@ public:
     }
 };
 
+
 // brure search every
 // better search each row with binart search
+
+
+*/
