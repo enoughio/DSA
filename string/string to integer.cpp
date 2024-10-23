@@ -1,3 +1,51 @@
+/*
+    int myAtoi(string s) {
+        int n = s.length();
+        int i = 0;
+        int SF = 1;
+        long long ans = 0;
+
+        while (s[i] == ' ')
+            i++;
+
+        if (s[i] == '-') {
+            SF = -1;
+            i++;
+        } else if (s[i] == '+') {
+            SF = 1;
+            i++;
+        }
+
+
+        while (i < n && 0 <= s[i] - '0' && s[i] - '0' <= 9) {
+
+            
+            if (ans > INT_MAX / 10 ||
+                (ans == INT_MAX / 10 && s[i] - '0') > INT_MAX % 10) {
+                return ans = (SF == 1 ? INT_MAX : INT_MIN);
+            }
+            ans = ans * 10 + s[i] - '0';
+            i++;
+        }
+
+         if(ans > INT_MAX && SF == 1) return INT_MAX;
+        if(ans < INT_MIN && SF == -1) return INT_MIN;
+
+        return ans * SF;
+    }
+};
+
+*/
+
+
+
+
+
+
+
+
+
+/*
 // forward count but not wirking
 class Solution {
 public:
@@ -37,6 +85,8 @@ public:
 
     }
 };
+
+*/
 
 
 
