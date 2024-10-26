@@ -1,12 +1,4 @@
-class Solution {
-public:
-  bool isPal(int st, int end, string &s) {
-    int j = end;
-    for (int i = st; i <= (st + end) / 2; i++, j--) {
-        if (s[i] != s[j]) return false;
-    }
-    return true;
-}
+
 
     string longestPalindrome(string s) {
 
