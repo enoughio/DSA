@@ -36,11 +36,10 @@ void printLL(Node *head)
 
 Node *arrtoll(vector<int> &arr)
 {
-    Node *head;
+   
 
-    Node *a = new Node(arr[0]);
-    head = a;
-
+    Node *head = new Node(arr[0]);
+   
     Node *mover = head;
     for (int i = 1; i < arr.size(); i++)
     {
@@ -103,50 +102,77 @@ Node *DeleteTail(Node *head)
     return head;
 }
 
-Node *DeleteAny(Node *head, int n)
+Node *DeleteKthElam(Node *head, int n)
 {
+    if (head == NULL)
+        return nullptr;
+
     if (n == 1)
     {
         return DeleteHead(head);
     }
-    Node *it = head;
-    int cnt = 1;
 
-    while (it != nullptr)
+    Node *temp = head;
+    Node *prev = nullptr;
+    int cnt = 0;
+
+    while (temp != nullptr)
     {
-
-        if (cnt + 1 == n)
-        {
-            if (it->next != nullptr)
-            {
-
-                Node *temp = it->next->next; // store connection
-                delete it->next;
-                it->next = temp;
-            }
-            else
-            {
-                delete it->next;
-                it->next = nullptr;
-                return head;
-            }
-        }
-
         cnt++;
-        it = it->next;
+        if (cnt == n)
+        {
+            prev->next =  temp->next;
+
+            delete temp;
+            break;
+        }
+        prev = temp;
+        temp = temp->next;
     }
+
+    return head;
+}
+
+Node * DeleteAtValue(Node *head, int num){
+      
+    if (head == NULL)
+        return nullptr;
+
+    if (head->data == num)
+    {
+        return DeleteHead(head);
+    }
+
+    Node *temp = head;
+    Node *prev = nullptr;
+
+    while (temp != nullptr)
+    {
+        if (temp->data == num)
+        {
+            prev->next =  temp->next;
+
+            delete temp;
+            break;
+        }
+        prev = temp;
+        temp = temp->next;
+    }
+
+    return head;
 }
 
 int main()
 {
 
-    vector<int> arr = {3, 4,3,5,2,5,2,52,6,2};
-    Node *head = arrtoll(arr);
+        vector<int> arr = {3, 4, 5, 2, 52, 6};
+        Node *head = arrtoll(arr);
     // printLL(head);
 
     // head = DeleteHead(head);
-    printLL(head);
-    head = DeleteAny(head,3);
+    // printLL(head);
+    // head = DeleteKthElam(head, 7);
     // head = DeleteTail(head);
+    head = DeleteAtValue(head, 3);
     printLL(head);
 }
