@@ -98,7 +98,7 @@ Node *InsertAtKth(Node *head, int data ,int k)
 }
 
 
-Node *InsertAtelem(Node *head, int data ,int elem)
+Node *fInsertAtelem(Node *head, int data ,int elem)
 {
     if(head == NULL)
         return new Node(data);
