@@ -197,7 +197,6 @@ Node *DeleteK(Node *head, int k)
     return head;
 }
 
-
 Node *DeleteAtVal(Node *head, int val)
 {
     if (head == NULL)
@@ -252,9 +251,41 @@ Node *InsertAtStart(Node *head, int data)
     return newHead;
 }
 
-// Node *InsertAtEnd(Node *head, int data)
-// {
-// }
+Node *InsertAfterTail(Node *head, int data)
+{
+}
+Node *InsertBeforeTail(Node *head, int data)
+{
+    if (head == NULL)
+        return new Node(data);
+    if (head->next == nullptr)
+    {
+        Node *newNode = new Node(data);
+        head->next = newNode;
+        newNode->back = head;
+        return head;
+    }
+
+    Node *it = head;
+    while (it->next->next != nullptr)
+    {
+        it = it->next;
+    }
+
+    Node *newNode = new Node(data);
+    it->next->back = newNode;
+    newNode->next = it->next;
+
+    it->next = newNode;
+    newNode->back = it;
+
+    return head;
+}
+
+Node *InsertBeforKth(Node *head, int data)
+{
+    
+}
 
 int main(void)
 {
@@ -264,8 +295,9 @@ int main(void)
     // head = DeleteHead(head);
     // DeleteTail(head);
     // head = DeleteAtVal(head, 89009);
-    head = DeleteK(head, 2);
+    // head = DeleteK(head, 2);
     // head = DeleteKInRange(head, 3);
     // head = InsertAtStart(head, 0);
+    head = InsertBeforeTail(head, 44);
     printList(head);
 }
