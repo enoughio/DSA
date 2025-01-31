@@ -17,3 +17,16 @@
             cout<<mapp[ nums[i] ];           
         }
         return {-1, 1};
+
+
+
+        //python solution
+                mapp = {}
+        n = len(nums)
+
+        for i in range(n):
+            if k - nums[i] in mapp:
+                return (i, mapp[k-nums[i]])
+            mapp[nums[i]] = i
+
+        return (0,0)
