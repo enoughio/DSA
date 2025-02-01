@@ -25,3 +25,23 @@ using namespace std;
            }
 
     }
+
+
+/* python */
+
+        def sortColors(self, nums: List[int]) -> None:
+        """
+        Do not return anything, modify nums in-place instead.
+        """
+        
+        lis = [0]*3 
+
+        for i in nums:
+            lis[i] += 1
+
+        j = 0
+        for i in range(3):
+            while(lis[i] > 0):
+                nums[j] = i
+                lis[i] -= 1
+                j += 1   
