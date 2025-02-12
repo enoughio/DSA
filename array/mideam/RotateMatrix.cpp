@@ -58,3 +58,40 @@ public:
 
 
     // }
+
+
+
+    // void rotate(vector<vector<int>>& matrix) {
+        
+    //     int n = matrix.size();  // row
+    //     int m = matrix[0].size();  // col
+    //     vector<vector<int>>odd(n, vector<int>(m));
+
+    //     for( int i = 0; i < n; i++){
+    //         for(int j = 0; j < m; j++){
+    //             odd[j][m-i-1] = matrix[i][j];
+    //         }
+    //     }
+
+    //     matrix = odd;
+    // }
+
+
+
+    // in python
+
+    class Solution:
+    def rotate(self, matrix: List[List[int]]) -> None:
+        """
+        Do not return anything, modify matrix in-place instead.
+        """
+        
+        n = len(matrix)
+
+        for  i in range(n) :
+            for j in range( i,n):
+                matrix[j][i], matrix[i][j] =  matrix[i][j], matrix[j][i] 
+            matrix[i].reverse()
+
+
+ 
