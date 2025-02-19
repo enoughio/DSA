@@ -21,6 +21,7 @@
                 return true;
             if(nums[st] == nums[mid]) st++;   // if found any  break condition then simpl move (avoid)
             else if(nums[mid] == nums[end]) end--;
+            
             else if(nums[st] <= nums[mid]) {
 
                 if(target >= nums[st] && target <= nums[mid])
