@@ -91,3 +91,44 @@ public:
 
 //     }
 // };
+
+
+
+class Solution:
+
+    def check(self, weights: List[int], cap: int ) -> int:
+        dayTaken = 1
+        n = len(weights)
+        i = 0
+        summ = 0
+
+        for w in weights:
+            if summ+w>cap:
+                dayTaken+=1
+                summ=0 
+            summ+=w
+
+        return dayTaken
+
+
+
+    def shipWithinDays(self, weights: List[int], days: int) -> int:
+        end = sum(weights)
+        st = max(weights)
+        ans = end
+
+        if(days == 1):
+            return end
+
+        while(st <= end ):
+            mid = floor((end + st)/2)
+            dayTaken = self.check(weights, mid)
+            
+            if( dayTaken <= days):
+                end = mid-1
+                ans = mid
+            else : 
+                st =mid + 1
+
+        return ans
+        
