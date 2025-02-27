@@ -69,3 +69,54 @@ int aggressiveCows(vector<int> &stalls, int k)
 }
 
 */
+
+
+
+bool chaeck(vector<int> &stalls, int dis, int cows, int n){
+    int cnt = 1;
+    int prev = stalls[0];
+
+    for(int i = 1; i < n; i++){
+       int diff = stalls[i] - prev;
+
+        if( diff >= dis){
+            cnt++;
+            prev = stalls[i];
+        } 
+        
+        if( cnt >= cows)
+            return true;
+
+    }
+
+
+    return false;
+}
+
+
+int aggressiveCows(vector<int> &stalls, int k)
+{
+//    Write your code here.
+sort(stalls.begin(), stalls.end());
+int ans = 0;
+int n = stalls.size();
+
+// for( int dis = 1; dis < ; dis++){
+int dis = 1;
+while(true){
+
+
+    if(chaeck(stalls, dis, k, n)){
+        ans = dis;
+    }else{
+        return ans;
+    }
+
+    dis++;
+
+}
+
+    return ans;
+
+}
+
