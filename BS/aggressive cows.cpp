@@ -120,3 +120,65 @@ while(true){
 
 }
 
+
+
+
+
+int check(vector<int>&nums, int m, int s, int aSum){
+
+    int sum = nums[0];
+    int br = 1;
+    int i = 1;
+
+    while( i < nums.size()){
+
+        if(sum + nums[i] <= s){
+            sum += nums[i];       
+        }else{
+            br++;
+            sum = nums[i];
+        }
+
+        if(br == m){
+            return true;
+        }
+        i++;
+    }
+
+    return false;
+}
+
+
+int findPages(vector<int>& arr, int n, int m) {
+    // Write your code here.
+
+    int aSum = 0;
+    int maxElem = arr[0];
+
+    if(m > n)
+    return -1;
+
+    for (int num : arr) {
+        aSum += num;
+        if (num > maxElem) {
+            maxElem = num;
+        }
+    }
+
+    if(m == n )
+        return  maxElem;
+
+    int ans = maxElem;
+    for(int i = maxElem; i <= aSum; i++){
+
+        if( check(arr, m, i, aSum)){
+            ans = i;
+        }else{
+            return i-1;
+        }
+      
+    }
+
+     return ans;   
+    
+}
