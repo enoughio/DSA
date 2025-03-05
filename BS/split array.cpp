@@ -116,3 +116,63 @@ public:
 
     }
 };
+
+
+
+
+
+
+
+
+
+class Solution {
+    public:
+        int check(vector<int>& nums, int s, int k) {
+    
+            int maxi = nums[0];
+            int barrier = 1;
+            int st = 0;
+            int i = 0;
+            int sum = 0;
+    
+            while (i < nums.size()) {
+    
+                if (sum + nums[i] < s) {
+    
+                    barrier++;
+                    maxi = max(sum, maxi);
+                    st = i;
+                } else {
+                    sum += nums[i];
+                }
+                
+                if (barrier >= k) {
+                    return maxi;
+                }
+    
+                i++;
+            }
+    
+            return max(sum, maxi);
+    
+        }
+    
+        int splitArray(vector<int>& nums, int k) {
+    
+    
+            int sum = 0;
+    
+            for( int i : nums){
+                sum+= i;
+            }
+            
+            int miniSub = nums[0];
+    
+            for(int s = nums[0]; s < sum; s++){
+                int cm = check(nums, s, k);
+                miniSub = max(miniSub, cm);
+            }
+    
+            return miniSub;
+        }
+    };
