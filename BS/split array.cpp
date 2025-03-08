@@ -176,3 +176,27 @@ class Solution {
             return miniSub;
         }
     };
+
+
+
+
+    class Solution:
+    def largestRectangleArea(self, heights: List[int]) -> int:
+        n = len(heights)
+        mAr = 0
+
+        for i in range(n):
+            height = heights[i]
+
+            rmax = i + 1
+            while rmax < n and heights[rmax] >= height:
+                rmax += 1
+            
+            lmax = i
+            while lmax >= 0 and heights[lmax] >= height:
+                lmax -= 1
+            
+            rmax -= 1
+            lmax += 1
+            mAr = max(mAr, height * (rmax - lmax + 1))
+        return mAr
