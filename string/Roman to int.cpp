@@ -1,3 +1,6 @@
+#include <bits/stdc++.h>
+using namespace std;
+
 class Solution {
 public:
     int val(char c) {
@@ -44,3 +47,45 @@ public:
         return ans;
     }
 };
+
+
+
+
+
+
+
+
+
+class tolution:
+    def romanToInt(self, s: str) -> int:
+        mp = { 'I': 1, 'V': 5, 'X': 10, 'L':50, 'C':100 ,'D': 500, 'M':1000}
+        ans = 0
+        n = len(s)
+
+        i = 0
+        while(i < n):
+            if( i+1 < n and s[i] == 'I' and s[i+1] == 'V' ):
+                ans = ans + 4
+                i+=1
+            elif(  i+1 < n and s[i] == 'I' and s[i+1] == 'X' ):
+                ans = ans + 9
+                i+=1
+            elif(  i+1 < n and s[i] == 'X' and s[i+1] == 'L' ):
+                ans = ans + 40
+                i+=1
+            elif(  i+1 < n and s[i] == 'X' and s[i+1] == 'C' ):
+                ans = ans + 90
+                i+=1
+            elif(  i+1 < n and s[i] == 'C' and s[i+1] == 'D' ):
+                ans = ans + 400
+                i+=1
+            elif(  i+1 < n and s[i] == 'C' and s[i+1] == 'M' ):
+                ans = ans + 900
+                i+=1
+            else:
+                ans = mp[s[i]]+ans
+
+            i+=1
+            
+
+        return ans

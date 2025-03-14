@@ -22,8 +22,6 @@ class Solution:
     
 
 
-#  print(m1[ ord(i) - ord('a') ])
-
 #  more optimized solution
 
 class Solution:
