@@ -1,4 +1,15 @@
-
+#include <bits/stdc++.h>
+using namespace std;
+    bool isPal(int ws, int we, string s){
+        while(ws < we){
+            if(s[ws] != s[we]){
+                return false;
+            }
+            ws++;
+            we--;
+        }
+        return true;
+    }
 
     string longestPalindrome(string s) {
 
@@ -24,4 +35,7 @@
 
         return ans;
     }
-};
+
+
+
+
