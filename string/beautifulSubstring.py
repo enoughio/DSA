@@ -1,5 +1,4 @@
 
-
 class Solution:
     def beautySum(self, s: str) -> int:
         bsum = 0

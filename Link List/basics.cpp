@@ -44,7 +44,7 @@ class Node {
             mover = temp;
         }
 
-        return head;
+       return head;
     }
 
     bool SearchLL(Node * head, int val){
@@ -52,7 +52,7 @@ class Node {
 
         while(it->next != nullptr)
         {
-            // cout<<it->data<<" ";
+           
             if(it->data == val) return true;
             it = it->next;
         }

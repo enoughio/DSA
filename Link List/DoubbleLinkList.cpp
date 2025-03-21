@@ -53,9 +53,9 @@ Node *AtoDLL(vector<int> &arr)
         temp->back = prev;
         prev = temp;
     }
-
     return head;
 }
+
 
 void printList(Node *head)
 {
@@ -136,13 +136,15 @@ Node *DeleteK(Node *head, int k)
                 Node *prev = it->back;
                 prev->next = nullptr;
                 it->back = nullptr;
-                delete it;
+                delete it
 
                 return head;
             }
 
             Node *prev = it->back;
             prev->next = it->next;
+            Node* NEXT = it->next;
+            NEXT->back = prev;
 
             it->next = nullptr;
             it->back = nullptr;
