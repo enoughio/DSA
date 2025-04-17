@@ -33,8 +33,7 @@ class Solution:
 
         if(st >= ed):
             return True
-
-
+        
         if( True != s[st].isalnum() ):
             return self.checkPal(s, st+1, ed)
 

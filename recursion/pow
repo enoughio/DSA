@@ -1,0 +1,56 @@
+
+# basic recursion
+def getit(self, x, n):
+
+        if(n == 1):
+            return x
+
+        return getit(x, n-1)* x
+        
+def myPow(self, x: float, n: int) -> float:
+    return getit(x,n)
+
+
+
+# optimal solution
+class Solution:
+    def myPow(self, x: float, n: int) -> float:
+
+        res = self.rec(x, abs(n))
+        print(res)
+        return res if n > 0 else 1/res
+
+    def rec(self, x, n):
+        if(n == 0):
+            return 1
+        if(n == 1):
+            return x
+        
+        if(n%2 == 0):
+            res = self.rec(x, n//2)
+            return res * res
+        else : 
+            res = self.rec(x, n//2)
+            return res * res * x
+        
+
+# more optimal 
+class Solution:
+    def myPow(self, x: float, n: int) -> float:
+
+        res = self.rec(x, abs(n))
+        print(res)
+        return res if n > 0 else 1/res
+
+    def rec(self, x, n):
+        if(n == 0):
+            return 1
+        if(n == 1):
+            return x
+        
+        if(n%2 == 0):
+            return self.rec(x * x, n//2)
+            # return res * res
+        else : 
+            return  self.rec(x * x , n//2) * x
+            # return res * res * x
