@@ -104,3 +104,59 @@ class Solution:
             return  (self.rec((x * x)% MOD , n//2,  MOD) * x)% MOD
             # return res * res * x
         
+
+
+#=========================
+
+
+class Solution:
+    def rec( self, x, n): 
+        if( n == 0 ):
+            return 1
+        if ( n == 1 ):
+            return x
+    
+        if( n%2 == 0):
+            res = self.rec( x*x, n//2) 
+            return res * res 
+        else :
+            res = self.rec( x*x, n//2) 
+            return  res * res * x
+            
+
+
+    def countGoodNumbers(self, n: int) -> int:
+        
+        mod = 10**9 + 7
+        
+        def rec( x, n): 
+            if( n == 0 ):
+                return 1
+            if ( n == 1 ):
+                return x
+        
+            if( n%2 == 0):
+                res = rec( x, n//2) % mod
+                return res * res 
+            else :
+                res = rec( x, n//2 ) % mod 
+                return ( res * res * x ) % mod
+            
+
+
+        big = 5
+        if(n%2 == 0):  #even
+            p = n // 2
+            big = 4*5
+
+            return rec(big, p) % mod  
+        else :
+            p = n // 2
+            big = 4*5
+
+            red = rec(big, p)  % mod
+            return ( red * 5 ) % mod
+
+        
+
+
