@@ -29,3 +29,29 @@ class Solution:
 
 s = Solution()
 print(s.generateParenthesis(8)) # ["((()))","(()())","(())()","()(())","()()()"]
+
+
+# ==========================
+
+class Solution:
+    def generateParenthesis(self, n: int) -> List[str]:
+        ans = []
+
+
+        def rec(st, open, close):
+            
+            if  len(st) == n*2 :
+                ans.append(st)
+                return
+
+            if open != n :
+                rec( st + '(', open + 1, close)
+            
+            if(open > close):
+                rec(st + ")", open, close + 1)
+            
+        rec("", 0, 0)
+        return ans
+ 
+
+#  +====================
