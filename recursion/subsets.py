@@ -25,3 +25,28 @@ class Solution:
 s = Solution()
 nums = [1,2,3]
 print(s.subsets(nums))
+
+
+
+
+
+# ========================
+
+class Solution:
+    def subsets(self, nums: List[int]) -> List[List[int]]:
+        ans = []
+
+        def rec(arr, i):
+
+            if i == len(nums) : 
+                ans.append(arr.copy())
+                return 
+            
+            rec(arr + [nums[i]] , i+1)
+            rec(arr, i+1)
+
+        rec([], 0)
+        return ans
+    
+
+# ======================++++=========
