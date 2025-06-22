@@ -37,7 +37,6 @@ class Solution:
     def generateParenthesis(self, n: int) -> List[str]:
         ans = []
 
-
         def rec(st, open, close):
             
             if  len(st) == n*2 :

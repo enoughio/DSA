@@ -31,3 +31,47 @@ candidates = [8, 7, 4, 3]
 K = 11
 print(s.combinationSum(candidates, K))
 # Output: [[2, 2, 3], [7]]
+
+
+
+
+
+
+
+
+# -------------------------------------------------
+class Solution:
+    def combinationSum(self, candidates: List[int], t: int) -> List[List[int]]:
+        
+        ans = []
+
+        def rec(arr, sum, i) :
+
+            if len(candidates) == i : 
+                if sum == t :
+                    ans.append(arr.copy())
+
+                return
+            
+            if sum == t :
+                ans.append(arr.copy())
+                return 
+            
+            if sum > t : 
+                return
+
+
+            if sum < t:
+                if i < len(candidates) :
+                    rec(arr + [candidates[i]], i + 1, sum + candidates[i])
+                else :
+                    return 
+
+
+            else :
+                rec(arr, i + 1, sum)
+
+
+        rec([], 0, 0)
+        return ans
+
