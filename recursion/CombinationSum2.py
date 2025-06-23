@@ -62,3 +62,54 @@ arr = [10, 1, 2, 7, 6, 1, 5, 2, 3, 4, 5, 6, 7, 8, 9]
 K = 8
 N = len(arr)
 print(s.combinationSum2(arr, K))
+
+
+
+
+
+
+
+
+
+
+
+
+
+# ===================================
+# TLE solution  
+
+class Solution:
+    def combinationSum2(self, candidates: List[int], t: int) -> List[List[int]]:
+        
+        ans = set()
+        n = len(candidates) 
+
+        def rec(arr, sum, i) :
+
+            if n <= i : 
+                if sum == t :
+                    arr.sort()
+                    tup = tuple(arr)
+                    ans.add(tup)
+                return
+            
+            if sum == t :
+                arr.sort()
+                tup = tuple(arr)
+                ans.add(tup)
+                return 
+            
+            if sum > t : 
+                return                
+
+            if candidates[i] + sum <= t:
+                rec(arr + [candidates[i]], sum + candidates[i], i+1)  # reuse current
+            rec(arr, sum, i+1)  # skip to next
+            
+
+
+        rec([], 0, 0)
+        return list(ans)
+
+
+# =========================================
