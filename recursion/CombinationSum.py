@@ -75,3 +75,46 @@ class Solution:
         rec([], 0, 0)
         return ans
 
+# ===============================================
+
+
+
+class Solution:
+    def combinationSum(self, candidates: List[int], t: int) -> List[List[int]]:
+        
+        ans = []
+        n = len(candidates) 
+
+        def rec(arr, sum, i) :
+
+            if n <= i : 
+                if sum == t :
+                    ans.append(arr.copy())
+                return
+            
+            if sum == t :
+                ans.append(arr.copy())
+                return 
+            
+            if sum > t : 
+                return
+
+            # if candidates[i] + sum  <= t :
+            #     rec(arr+[candidates[i]], i, sum + candidates[i])
+            # rec(arr, i + 1, sum)
+                
+
+            if candidates[i] + sum <= t:
+                rec(arr + [candidates[i]], sum + candidates[i], i)  # reuse current
+            rec(arr, sum, i+1)  # skip to next
+            
+            # if candidates[i] + sum  <= t :
+            #     arr.append(candidates[i])
+            #     rec(arr, sum +  candidates[i], i)
+            #     arr.pop()
+            # rec(arr, sum, i+1,)
+
+
+        rec([], 0, 0)
+        return ans
+
