@@ -18,17 +18,12 @@ class Solution:
             return True
         nums.append(arr[i])
         sum = sum + arr[i]
-
         
         if (self.rec(sum, nums, i+1, arr, k, n) == True):
             return True
         else:
             nums.pop()
             return False
-        
-
-
-
 
 s = Solution()
 arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
