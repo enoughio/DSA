@@ -113,3 +113,42 @@ class Solution:
 
 
 # =========================================
+
+
+
+class Solution:
+    def combinationSum2(self, candidates: List[int], t: int) -> List[List[int]]:
+        
+        ans = []
+        n = len(candidates) 
+        candidates.sort()
+
+        
+        if(candidates[0] == candidates[-1] and t > candidates[0]*len(candidates)) :
+            return []
+
+        def rec(arr, sum, i) :
+
+            if n <= i : 
+                if sum == 0 :
+                    ans.append(arr)
+                return
+            
+            if sum == 0 :
+                ans.append(arr)
+                return
+            
+            for j in range(i, n):
+
+                if( j > i and candidates[j] == candidates[j-1] ):
+                    continue
+
+                if candidates[i] > sum :
+                    break
+
+                rec(arr + [candidates[j]], sum - candidates[j], j+1)  # take the current 
+
+            # rec(arr, sum, i+1)  # skip to next
+
+        rec([], t, 0)
+        return ans
