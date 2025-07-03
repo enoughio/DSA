@@ -30,3 +30,18 @@
             mapp[nums[i]] = i
 
         return (0,0)
+
+
+
+// -------------------------
+
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        hashMap = { }
+
+        for i in range(len(nums)) : 
+            if target - nums[i] in hashMap : 
+                j = hashMap.get( target - nums[i] )
+                return [i, j]
+
+            hashMap[nums[i]]  = i
