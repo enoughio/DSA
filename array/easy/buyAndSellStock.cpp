@@ -110,3 +110,22 @@ public:
         // }
 
         // return maxi;
+
+
+
+
+class Solution:
+    def maxProfit(self, prices: List[int]) -> int:
+        maxP = 0
+        mini = prices[0]
+
+        for i in range( len(prices) ) : 
+            prof =  prices[i] - mini
+
+            if prof > maxP and prof > 0 : 
+                maxP = prof
+
+            if prices[i] < mini : 
+                mini = prices[i]
+            
+        return maxP
