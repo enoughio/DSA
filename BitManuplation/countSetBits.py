@@ -1,9 +1,6 @@
 
 
 def countNum(n) : 
-
-
-
     cnt  =  0 
     while( n > 1 ) : 
         cnt += n & 1
