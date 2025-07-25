@@ -10,14 +10,14 @@ class QueueImpl() :
 
     def push(self, n) : 
 
-        if (self.end + 1) % self.capacity == self.start:
+        if (self.end + 1) % self.capacity == self.start and self.qSize + 1 == self.capacity :
             print("Queue Overflow")
             return
 
         if self.start == -1 : 
             self.start  += 1
-            self.end = self.start 
-        else : 
+            self.end += 1
+        else :
             self.end = ( self.end + 1 ) % self.capacity
 
         self.queue[self.end] = n
@@ -57,10 +57,10 @@ class QueueImpl() :
 q = QueueImpl(4)
 
 q.push(4)
-q.push(3)
+q.push(5)
 print('Size is:', q.size())  # 2
 q.pop()
 q.push(2)
 print('Size is:', q.size())  # 2
-print('Front element is:', q.front())  # 3
+print('Front element is:', q.front())  # 5
 
