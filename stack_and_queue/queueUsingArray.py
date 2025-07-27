@@ -53,7 +53,6 @@ class QueueImpl() :
         return self.queue[self.start]
 
 
-
 q = QueueImpl(4)
 
 q.push(4)
