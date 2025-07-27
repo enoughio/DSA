@@ -19,6 +19,7 @@ class Queue() :
             self.start = node
             self.end = node
         else : 
+            self.end.next = node
             self.end = node
         
         self.size += 1
@@ -32,14 +33,16 @@ class Queue() :
     
         rem = self.start
         self.start = self.start.next
-        rem.next = None
         data = rem.data
+        rem.next = None
+        if self.start == None :
+            self.end = None
 
         self.size -= 1
         return data
     
     def Size(self) :
-        return self.size()
+        return self.size
     
     def top(self) :
         if self.end == None :
@@ -50,16 +53,14 @@ class Queue() :
 
 q = Queue()
 q.push(3)
-print(q.top())
+print("top is",q.top())
 
 q.push(4) 
-q.push(3)
-print(q.pop()) # 3
-q.push(33) 
-print(q.top()) # 33
-q.pop()
-q.push(2) 
-q.pop()
-q.push(1) 
-q.pop()
-print(q.top())
+print(q.pop()) # 3 
+
+print("top is",q.top()) # 3
+print("size is",q.Size())
+q.pop() 
+print(q.top())  #None
+q.pop() 
+print("size is",q.Size())
