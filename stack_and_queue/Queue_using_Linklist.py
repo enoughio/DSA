@@ -7,6 +7,7 @@ class Node () :
 
 
 class Queue() : 
+
     def __init__(self):
         self.start = None
         self.end = None
@@ -33,8 +34,8 @@ class Queue() :
     
         rem = self.start
         self.start = self.start.next
+        
         data = rem.data
-        rem.next = None
         if self.start == None :
             self.end = None
 
