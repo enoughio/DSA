@@ -129,3 +129,20 @@ class Solution:
                 mini = prices[i]
             
         return maxP
+        
+
+// two pointer approach
+// Best Time to Buy and Sell Stock
+//  def maxProfit(self, prices: List[int]) -> int:
+//         high=prices[0]
+//         low=prices[0]
+//         profit=0
+//         for price in prices:
+//             if (price>low):
+//                 high=price
+//                 profit=max(profit,high-low)
+//             else:  
+//                 low = price
+//             high =  price 
+            
+//         return profit
