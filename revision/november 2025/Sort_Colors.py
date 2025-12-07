@@ -51,3 +51,36 @@ class SolutionNotWorking:
 
 
         
+
+# ---------------------------
+
+# final solution 
+
+class Solution:
+    def sortColors(self, nums: List[int]) -> None:
+        
+        def swap(n,m) : 
+            nums[n],nums[m] = nums[m],nums[n]
+
+        n = len(nums)
+
+        low = 0
+        mid = 0
+        high = n-1
+
+        if n == 1 : 
+            return
+
+        while mid <= high : 
+
+            if nums[mid] == 0 : 
+                swap(mid, low)
+                mid += 1
+                low += 1
+            elif nums[mid] == 1 :
+                mid +=1
+            else :
+                swap(mid,high)
+                high-=1
+        
+        
