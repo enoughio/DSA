@@ -19,3 +19,34 @@ class Solution:
             return max(l, r)
 
         return fn(root, 0)
+
+
+# ------------ using BFS ---------
+
+    def maxDepth(self, root: Optional[TreeNode]) -> int:
+        
+        level = 0
+
+        if root is None : return level
+        q = deque()
+        q.append(root)
+
+        while(q) :
+
+            s = len(q)
+
+            for _ in range(s) :
+                e = q.popleft()
+                
+                if e.left :
+                    q.append(e.left)
+                if e.right : 
+                    q.append(e.right)
+                
+            level += 1
+
+        return level
+
+
+
+

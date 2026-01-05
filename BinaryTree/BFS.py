@@ -52,7 +52,7 @@ class Solution:
             for _ in range(s) : 
 
                 elem  = q.popleft()
-                level.append(elem.val)
+                level.append(elem.val) 
 
                 if elem.left != None : 
                     q.append(elem.left)
