@@ -51,3 +51,55 @@ print(s.pop()) #4
 print(s.Top())  #3
 s.push(5)
 print(s.size()) #2
+
+
+# class Node () :
+#     def __init__(self, value):
+#         self.data = value
+#         self.next = None
+
+
+class StImpl :
+    
+    def __init__():
+        self.top = None
+        self.size = 0
+
+
+    def push(data):
+         
+        node = Node(data)
+        node.next = self.top
+
+        self.top = node
+        self.size += 1
+        
+
+    def pop():
+        
+        if self.top is None :
+            print("stack Underflow")
+
+        rem = self.top.data
+        temp = self.top.data
+        del(rem)
+        self.top = self.top.next
+
+        self.size -= 1
+        return temp
+        
+
+    def size():
+        
+        return self.size
+
+
+
+    def Top():
+        
+        if self.top is None : 
+            print("stack underflow")
+            return None
+        
+        return top.val
+     
