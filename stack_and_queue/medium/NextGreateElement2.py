@@ -56,4 +56,23 @@ class Solution:
         ans[e] = -1
         return ans 
 
+
+
+
+# ------------------------------------------revision---------------
             
+class Solution:
+    def nextGreaterElements(self, nums: List[int]) -> List[int]:
+        
+        n = len(nums)
+        ans = [-1]*n
+
+        for idx, elem in enumerate(nums) : 
+            
+            for j in range(idx, idx + n) : 
+                i = j%n
+                if nums[i] > elem : 
+                    ans[idx] = nums[i]
+                    break
+
+        return ans 
