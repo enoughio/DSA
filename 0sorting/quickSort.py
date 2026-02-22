@@ -1,7 +1,7 @@
 
-pick up a pivot and place it in its right place
-in the process everything on the left will be smaller then/equal to the pivot, 
-and everything to the left will be greater then pivot
+# pick up a pivot and place it in its right place
+# in the process everything on the left will be smaller then/equal to the pivot, 
+# and everything to the left will be greater then pivot
 
 
 def QuickSort(arr, low, high) : 
@@ -29,7 +29,7 @@ def partition(arr, low, high) :
             j-=1
 
         if( i < j) :
-            arr[i], arr[j] = arr[j], arr[i]v vv
+            arr[i], arr[j] = arr[j], arr[i]
 
 
      
