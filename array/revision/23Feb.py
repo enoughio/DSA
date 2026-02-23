@@ -23,4 +23,14 @@ class Solution:
             if j < n and i < n and j > i and nums[i] == 0 and nums[j] != 0 : 
                 nums[i], nums[j] = nums[j], nums[i]
             
+
+
+# ---------------------------
+    def singleNumber(self, nums: List[int]) -> int:
         
+        xor = nums[0]
+
+        for i in range(1,len(nums)) : 
+            xor = xor ^ nums[i]
+        
+        return xor
