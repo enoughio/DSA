@@ -29,7 +29,7 @@ def noOfSubarray(arr, k) :
     
     return cnt 
 
------------------------
+# -----------------------
 
 # ----------Two Sum--------------
 
@@ -48,4 +48,6 @@ class Solution:
             mp[nums[i]] = i
 
         return [0,1]  
+
+
 
