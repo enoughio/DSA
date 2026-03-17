@@ -37,40 +37,40 @@ class Solution:
     # -------------------------longest palandrom sub---------------
 
     class Solution:
-    def longestPalindrome(self, s: str) -> str:
+        def longestPalindrome(self, s: str) -> str:
+            
+            n = len(s)
+            maxi = 0
+
+            maxl = 0
+            maxr = n
+
+            pr = 0
+            i = 0
+
+            while i < n :
+                l = i
+                r = i
+
+                while i +1 < n and s[i] == s[i+1 ] :
+                    r = i + 1
+                    i = i + 1
+
+                i = i +1 
+            
+                while( l >=0 and r < n ) : 
+                    if s[r] == s[l] :
+                        if (r-l)+1 >= maxi : 
+                            maxl = l 
+                            maxr = r
+                            maxi = (r-l)+1
+                        r+=1
+                        l-=1
+                    
+                    else : 
+                        break
+
+
+            return s[maxl : maxr+1]
         
-        n = len(s)
-        maxi = 0
-
-        maxl = 0
-        maxr = n
-
-        pr = 0
-        i = 0
-
-        while i < n :
-            l = i
-            r = i
-
-            while i +1 < n and s[i] == s[i+1 ] :
-                r = i + 1
-                i = i + 1
-
-            i = i +1 
         
-            while( l >=0 and r < n ) : 
-                if s[r] == s[l] :
-                    if (r-l)+1 >= maxi : 
-                        maxl = l 
-                        maxr = r
-                        maxi = (r-l)+1
-                    r+=1
-                    l-=1
-                
-                else : 
-                    break
-
-
-        return s[maxl : maxr+1]
-    
-    
