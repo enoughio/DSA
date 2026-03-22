@@ -79,3 +79,31 @@ class Solution:
         else : 
             res = self.power(x, n//2)
             return res * res * x
+        
+
+
+
+
+
+# ----------------- Generate binary string without adjecet 0-----------------
+
+class Solution:
+    def validStrings(self, n: int) -> List[str]:
+        ans = []
+        self.gen([], ans, 0, n)
+        return ans
+
+
+    def gen(self, s, ans, i, n) : 
+        
+        if i == n : 
+            st = ("").join(s) 
+            # print(st)
+            ans.append(st)
+            return 
+
+        if not (len(s) > 0 and s[-1] == "0") : 
+            self.gen(s+ ['0'], ans, i+1, n)
+
+        self.gen(s+["1"], ans, i+1, n)
+
