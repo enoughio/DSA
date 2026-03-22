@@ -96,3 +96,51 @@ class Solution:
 
 
         return None
+
+
+
+        # -------------- find the length of the loop in a linked ----------
+
+'''
+class Node:
+    def __init__(self, data): 
+        self.data = data
+        self.next = None
+'''
+
+class Solution:
+    def lengthOfLoop(self, head):
+        #code here
+        
+        #  // find a loop
+        #  // find starting pont 
+        #  // detect the length of the loop
+         
+         
+        s = head
+        f = head 
+        start = None 
+        cnt = 0
+        
+        
+        while f != None and f.next != None : 
+            
+            s = s.next
+            f = f.next.next
+            
+            # // find starting point
+            if s == f :
+                start = s.next
+                cnt+=1
+                while s != start : 
+                    cnt +=1
+                    start = start.next
+                
+                
+                break
+                    
+        return cnt
+        
+        
+        
+        
