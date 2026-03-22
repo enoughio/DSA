@@ -50,4 +50,32 @@ class Solution:
 
 
 
-------------------
+# ------------------ custom Power function -----------------
+class Solution:
+    def myPow(self, x: float, n: int) -> float:
+
+        sign = True    
+        if n < 0 : 
+            sign = False
+            n = abs(n)
+
+        if n%2== 0 :
+            res = self.power(x,n//2)
+            return res * res if sign  else 1/(res * res)
+        else :
+            res = self.power(x,n//2)
+            return res * res * x if sign  else 1/(res * res * x)
+    
+    def power(self, x, n) : 
+
+        if n == 0 : 
+            return 1
+        if n == 1 : 
+            return x
+        
+        if n%2 == 0 : 
+            res = self.power(x, n//2)
+            return res * res
+        else : 
+            res = self.power(x, n//2)
+            return res * res * x
