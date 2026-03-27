@@ -21,3 +21,28 @@
             fn(0, 1, [], n)
 
             return ans
+        
+
+
+
+
+    # ------------subsets---------
+
+    class Solution:
+    def subsets(self, nums: List[int]) -> List[List[int]]:
+        
+        n = len(nums)
+
+        def fun(i, arr) :
+
+            ans.append(arr.copy())
+
+            for j in range(i, n) :
+                arr.append(nums[j ])
+                fun(j+1, arr)
+                arr.pop()
+
+
+        ans = []
+        fun(0, [])
+        return ans
