@@ -23,3 +23,14 @@ ORDER BY product_id ASC
 SELECT name, population, area 
 FROM World 
 WHERE area >= 3000000 OR population >= 25000000 ; 
+
+
+
+-------------
+-- 1148. Article Views I
+
+# Write your MySQL query statement below
+select DISTINCT author_id  as id
+from Views 
+where viewer_id = author_id 
+order by author_id ASC
