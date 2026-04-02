@@ -54,3 +54,32 @@ Left Join Transactions t
 on v.visit_id = t.visit_id
 where amount is NULL 
 group by customer_id
+
+
+-----
+rising temperature
+
+# Write your MySQL query statement below
+select today.id 
+From weather today
+cross Join weather yesterday 
+
+where DATEDIFF(today.recordDate, yesterday.recordDate) = 1 
+    AND  today.temperature > yesterday.temperature  ;
+
+
+-----------
+-- Average Processing time 
+
+
+# Write your MySQL query statement below
+
+select A.machine_id,  round( AVG( B.timestamp - A.timestamp )  ,3) AS processing_time  
+
+FROM Activity A 
+JOIN ACTIVITY B 
+on A.machine_id = B.machine_id AND  A.process_id = B.process_id 
+    AND A.activity_type="start" AND B.activity_type ="end"
+
+GROUP BY A.machine_id
+
