@@ -28,3 +28,45 @@ class Solution:
 
         rec(0, [], target)
         return ans
+
+        # --------------------subset 1 ----------------
+
+        class Solution:
+    def subsets(self, nums: List[int]) -> List[List[int]]:
+        
+        def rec(i, arr): 
+
+            if i == n : 
+                ans.append(arr.copy())
+                return 
+            
+            rec(i+1, arr + [nums[i]])
+            rec(i+1, arr)
+        
+        ans = []
+        n = len(nums)
+        rec(0, [])
+        return ans
+
+# ---------------- subset 2 ----------------
+
+class Solution:
+    def subsetsWithDup(self, nums: List[int]) -> List[List[int]]:
+        nums.sort()
+        
+        def rec(i, arr) : 
+
+            if i == n :
+                ans.append(arr.copy())
+                return 
+            
+            rec(i+1, arr + [nums[i]])
+            while i+1 < n and nums[i] == nums[i+1] : i+=1
+            rec(i+1, arr )
+        
+        ans = []
+        n = len(nums)
+        rec(0, [])
+        return ans
+
+
