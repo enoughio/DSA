@@ -31,7 +31,7 @@ class Solution:
 
         # --------------------subset 1 ----------------
 
-        class Solution:
+class Solution:
     def subsets(self, nums: List[int]) -> List[List[int]]:
         
         def rec(i, arr): 
