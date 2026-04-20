@@ -32,7 +32,7 @@ class Solution:
 
     # ------- implemented min Stack -------------
 
-    class MinStack:
+class MinStack:
 
     def __init__(self):
         self.st = []

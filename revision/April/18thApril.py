@@ -1,4 +1,4 @@
-    class Solution:
+class Solution:
     def combinationSum3(self, limit: int, target: int) -> List[List[int]]:
 
 
