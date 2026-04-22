@@ -21,7 +21,7 @@ class Solution:
         return ans
 
 
------------inorder------------
+# -----------inorder------------
 
 class Solution:
     def inorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
@@ -39,7 +39,7 @@ class Solution:
         return ans
 
 
----------- postOrder ---------
+# ---------- postOrder ---------
 
 class Solution:
     def postorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
