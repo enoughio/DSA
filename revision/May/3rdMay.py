@@ -1,3 +1,6 @@
+
+# ----------- more optimized -------------
+
 class Solution:
     def removeKdigits(self, num: str, k: int) -> str:
         
@@ -12,26 +15,22 @@ class Solution:
             while st and k > 0 and int(st[-1]) > int(num[i]) : 
                 st.pop()
                 k = k-1
-
+            
+            if not st and num[i] == "0" : 
+                continue
+            
             st.append(num[i])
     
-        while k > 0 : 
+        while st and k > 0 : 
             st.pop()
             k = k-1
         
-        res = ""
-        while st :
-            # res = res + int(st.pop()) 
-            res = st.pop() + res
-        
-        i = 0
-        while i < len(res) and res[i] == '0' : 
-            i += 1
-
-        ste = ""
-        for j in range(i, len(res)) : 
-            ste = ste + res[j]
-
-        if not ste : 
+        res = "".join(st)
+        if res == "" : 
             return "0"
-        return ste
+        return res
+
+      
+        
+
+        
