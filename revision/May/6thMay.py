@@ -92,3 +92,53 @@ class Solution:
         
         return ans
             
+
+
+# --------------vertical order treversal -------------
+
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def verticalTraversal(self, root: Optional[TreeNode]) -> List[List[int]]:
+
+        self.mp = {}
+        self.maxl = 0 
+        self.maxR = 0 
+
+        def rec(node, row, col) : 
+
+            if node is None : 
+                return 
+
+            if col not in self.mp : 
+                self.mp[col] = []
+
+            self.mp[col].append(node.val)
+        
+            rec(node.left, row+1, col-1)
+            self.maxl = min(self.maxl, col)
+
+            rec(node.right, row+1, col+1)
+            self.maxR = max(self.maxR, col)
+        
+
+        ans = []
+        rec(root, 0, 0)
+
+        # print(self.maxl)
+        # print(self.maxR)
+
+        for i in range(self.maxl, self.maxR+1, 1) : 
+
+            if i in self.mp : 
+                self.mp[i].sort()
+                ans.append(self.mp[i])
+
+                
+        return ans 
+
+
