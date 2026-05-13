@@ -26,5 +26,4 @@ class Solution:
         
             return isSum * rec(node.left) * rec(node.right)
             
-        
         return  rec(root)
