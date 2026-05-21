@@ -12,9 +12,12 @@ class Solution:
 
             if i == j and k == l : 
                 return None 
+
+            if i > j or k > l:
+                return None
             
             x = preorder[k]
-            root = mp[x] 
+            root = inorder[mp[x]] 
             left  = build( mp, i, root -1, inorder, k+1, k + (root - i), preorder)
             right  = build( mp, root + 1, j, inorder, k+ (root - i), l , preorder)
 
@@ -33,6 +36,6 @@ class Solution:
         for i in range(n) : 
             mp[inorder[i]] = i
         
-        return build(mp, 0, n, inorder, 0, len(preorder), preorder)
+        return build(mp, 0, n-1, inorder, 0, len(preorder)-1, preorder)
         
-       ;
+       
