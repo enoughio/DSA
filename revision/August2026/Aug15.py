@@ -18,3 +18,25 @@ class MyHashSet:
             return True
         return False
 
+# --------------
+
+
+class MyHashMap:
+
+    def __init__(self):
+        self.cap = int(10e5) + 3
+        self.dec = [None] * self.cap
+
+    def put(self, key: int, value: int) -> None:
+        self.dec[key] = value            
+
+    def get(self, key: int) -> int:
+        if self.dec[key] is None :
+            return -1 
+        return self.dec[key]
+
+    def remove(self, key: int) -> None:
+        if self.dec[key] is not None :
+            self.dec[key] = None
+        return None
+
