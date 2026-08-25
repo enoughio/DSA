@@ -42,4 +42,28 @@ class Solution:
         ans[-1] = cur
 
         return ans 
+
+class Solution:
+    def checkValid(self, matrix: List[List[int]]) -> bool:
+        
+        rows = len(matrix)
+        n = rows
+
+        cnt = 0
+
+        for cnt in range(n) : 
+
+            row = set()
+            col = set()
+
+            for i in range(rows) : 
+                row.add(matrix[cnt][i])
+            
+            for i in range(rows) : 
+                col.add(matrix[i][cnt])
+            
+            if len(row) < n or len(col) < n : 
+                return False 
+ 
+        return True
         
